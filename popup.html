@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Link Indexing Bot</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="loadingView">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+
+        <div id="welcomeView" style="display:none;">
+            <div class="flex">
+                <img src="/images/icon128.png" alt="Icon" width="128" height="128">
+                <h1>Link Indexing Bot</h1>
+                <p>Please enter your API Key and User ID:</p>
+                    <input type="text" id="userIdInput" placeholder="User ID" pattern="\d*" title="User ID should only contain numbers" required>
+                    <input type="text" id="apiKeyInput" placeholder="API Key" required>
+                    <p id="errorMessage" style="color: red; display: none;">Please fill out both fields correctly.</p>
+                    <div>
+                        <a href="https://dashboard.link-indexing-bot.com/register" target="_blank"><button class="btn-register">Register</button></a>
+                        <button id="saveApiKeyButton" >Login</button>
+                    </div>
+            </div>
+        </div>
+    
+        <div id="mainView" style="display:none;">
+            <h1>Link Indexing Bot</h1>
+            <p>Your balance: <span id="balance"></span> limits</p>
+            <h2>Send For Indexation</h2>
+            <div class="send-urls-container">
+                <textarea id="urlsInput" placeholder="Enter URLs here" rows="5"></textarea>
+                
+                <div class="radio-group">
+                    <p class="index-mode">Mode</p>
+                    <input type="radio" id="normal" name="indexationType" value="normal" checked>
+                    <label for="normal">Normal</label>
+                    <input type="radio" id="hard" name="indexationType" value="hard">
+                    <label for="hard">Hard</label>
+                    <a href="https://link-indexing-bot.com" target="_blank">What's this?</a>
+                </div>
+            
+                <button id="sendUrlsButton">Send URLs</button>
+            </div>
+            <br><br>
+            <h2>Check Task Status</h2>
+            <div class="task-check">
+                <input type="text" id="taskIdInput" placeholder="Task ID">
+                <button id="checkTaskButton">Check</button>
+            </div>
+            <br><br>
+            <button id="clearApiKeyButton" class="btn-exit"></button>
+        </div>
+    
+        <div id="notificationView" style="display:none;">
+            <div class="flex">
+                <h2 id="notificationHeader">Something Happened</h2>
+                <p id="notificationText">Description</p>
+                <button id="closeNotificationButton">OK</button>
+            </div>
+        </div>
+        
+    </div>
+    <div class="pre-footer">
+        <div class="topup"><a href="https://dashboard.link-indexing-bot.com/top_up" target="_blank">Top-Up</a></div>
+        <div class="tasks"><a href="https://dashboard.link-indexing-bot.com/dashboard" target="_blank">Manage Tasks</a></div>
+    </div>
+    <div class="footer">
+        <div class="website"><a href="https://link-indexing-bot.com" target="_blank">Official Website</a></div>
+        <div class="telegram"><a href="https://t.me/Link_Indexing_Com_bot" target="_blank">Telegram Bot</a></div>
+        <div class="agreement"><a href="https://link-indexing-bot.com/rules.html" target="_blank">User Agreement</a></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

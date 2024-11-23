@@ -1,0 +1,247 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 350px;
+    height: 500px;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#loadingView {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: -99;
+}
+
+.spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#loadingView p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+#notificationView,
+#welcomeView,
+#mainView {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 1;
+    display: none;
+    padding: 1em;
+    overflow: auto;
+}
+
+#welcomeView {
+    display: block;
+    text-align: center;
+}
+#welcomeView div.flex {
+    gap:10px;
+}
+#welcomeView div.flex input {
+    justify-self: auto;
+}
+
+div.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#taskIdInput {
+    flex-grow:1;
+}
+
+.button,
+button {
+    padding: 8px 14px;
+    background-color: #ffffff;
+    color: #3498db;
+    border: 1px solid #3498db;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button,
+button:hover {
+    background-color: #2980b9;
+    color: #fff;
+}
+
+.btn-register {
+    background-color: #ffffff;
+    border: 1px solid #34db55;
+    text-decoration: none;
+    margin: 0;
+    color: #34db55;
+}
+.btn-register:hover {
+    background-color: #34db55;
+    color: #fff;
+}
+
+.btn-exit {
+    color: #e74c3c;
+    font-weight: bold;
+    border: none;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    z-index: 100;
+}
+
+.btn-exit::before {
+    content: "\2716";
+    width: 20px;
+    /* Unicode for cross sign */
+}
+
+.btn-exit:hover {
+    background-color: #c0392b;
+    color: #fff;
+}
+div.pre-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1em;
+    padding: 1em;
+    background-color: #e2e8e3;
+}
+
+div.pre-footer .topup::before {
+    content: "\1F4B0";
+}
+
+div.pre-footer .tasks::before {
+    content: "\2699";
+}
+
+
+div.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1em;
+    padding: 1em;
+    background-color: #e2e8e3;
+}
+
+div.footer .website::before {
+    content: "\1F310";
+    /* Unicode for globe */
+}
+
+div.footer .telegram::before {
+    content: "\1F916";
+    /* Unicode for robot */
+}
+
+div.footer .agreement::before {
+    content: "\2705";
+    /* Unicode for check sign */
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group label {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    color:#707070
+}
+
+.radio-group input[type="radio"]:checked+label {
+    background-color: #f5b400;
+    color: #000000;
+    border-color: #f5b400;
+}
+
+.radio-group a {
+    margin-left: 10px;
+    color: #3498db;
+    text-decoration: none;
+}
+
+.radio-group a:hover {
+    text-decoration: underline;
+}
+
+.index-mode {
+    margin-right: 10px;
+}
+
+.task-check {
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    justify-content: space-between;
+}
+
+.send-urls-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
